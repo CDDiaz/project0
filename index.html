@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Project 0</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link id="styles" rel="stylesheet" href="css/style.css">
   <script src="js/jquery.js"></script>
   <script src="js/game.js"></script>
   <script src="js/project0.js"></script>
@@ -16,8 +16,8 @@
 <div class="container">
     <header>
       <nav>
-        <a href="" class="modes">Dark Mode</a>
-        <a href="" class="modes">Light Mode</a>
+        <a href="#" class="modes" id="dark-css">Dark Mode</a>
+        <a href="#" class="modes" id="light-css">Light Mode</a>
 
 
 
@@ -28,60 +28,73 @@
 
     <main>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="welcome">
+        <p>Welcome! You have come to the right place for the ultimate Tic Tac Toe challenge. Please select the option of your preference: </p>
+
+        <p>Quick games are easy and no extra configuration is needed.</p>
+        <button class="startButtons" id="startQuick">Start a Quick Game</button>
+        <p>If you prefer to customise your game, then a Custom game would be perfect for you!</p>
+        <button class="startButtons" id="startCustom">Start a Custom Game</button>
+        <p></p>
+      </div>
+
 
       <div class="optionsleft">
         <h3>Player 1</h3>
-        <p>Libero fugiat architecto sint aperiam ab nisi perferendis sequi ut expedita!</p>
+        <block class="turns" id="oneTurn">Your Turn</block>
+        <p>Please select your nickname and a character to identify you.</p>
 
-        <p>Nickname: <input type="text" id="playerOneName" placeholder="enter your nickname"></p>
+        <p class="textToRight">Nickname: <input type="text" id="playerOneNickname" placeholder="enter your nickname"></p>
 
-        <p>Identifier: <input type="text" id="playerOneCharacter" placeholder="enter a letter/symbol"></p>
+        <p class="textToRight">Identifier: <input type="text" id="playerOneCharacter" placeholder="enter a letter/symbol"></p>
 
 
       </div>
 
       <div class="optionsright">
         <h3>Player 2</h3>
-        <p class="right">Libero fugiat architecto sint aperiam ab nisi perferendis sequi ut expedita!</p>
+        <block class="turns" id="twoTurn">Your Turn</block>
+        <p class="textToLeft">Please select your nickname and a character to identify you.</p>
 
-        <p>Nickname: <input type="text" class="playerTwoName" placeholder="enter your nickname"></p>
+        <p class="textToRight">Nickname: <input type="text" id="playerTwoNickname" placeholder="enter your nickname"></p>
 
-        <p>Identifier: <input type="text" id="playerTwoCharacter" placeholder="enter a letter/symbol"></p>
+        <p class="textToRight">Identifier: <input type="text" id="playerTwoCharacter" placeholder="enter a letter/symbol"></p>
 
 
       </div>
 
       <div class="game">
 
-        <p>Vel magnam, ipsum quam aperiam odit, labore laboriosam mollitia officiis ullam unde.</p>
-        <button id="startQuick">Start Quick Game!</button>
-        <p>Porro commodi sint, itaque blanditiis, labore repellendus animi!</p>
-        <button id="startCustom">Start Custom Game!</button>
-        <p>taque blanditiis, porro commodi sint, labore repellendus animi!</p>
+        <div class="ticfirst">
+          <button class="tictac" id="a0"></button><button class="tictac" id="a1"></button><button class="tictac" id="a2"></button>
+        </div>
 
+        <div class="ticsecond">
+          <button class="tictac" id="b0"></button><button class="tictac" id="b1"></button><button class="tictac" id="b2"></button>
+        </div>
 
-
-      <div class="ticfirst">
-        <button class="tictac" id="a0"></button><button class="tictac" id="a1"></button><button class="tictac" id="a2"></button>
-      </div>
-
-      <div class="ticsecond">
-        <button class="tictac" id="b0"></button><button class="tictac" id="b1"></button><button class="tictac" id="b2"></button>
-      </div>
-
-      <div class="ticthird">
-        <button class="tictac" id="c0"></button><button class="tictac" id="c1"></button><button class="tictac" id="c2"></button>
-      </div>
-
+        <div class="ticthird">
+          <button class="tictac" id="c0"></button><button class="tictac" id="c1"></button><button class="tictac" id="c2"></button>
+        </div>
 
       </div>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur maiores culpa, facere porro, fuga cumque asperiores fugiat molestiae officiis soluta pariatur magni iure voluptatum eum unde, rerum tempora ad voluptates!</p>
 
-      <p>Nisi animi ipsa, laudantium quod architecto tempora repudiandae sit! Eveniet adipisci totam consequuntur suscipit facilis soluta sed, error, voluptate. Libero fugiat architecto sint aperiam ab nisi perferendis sequi ut expedita!</p>
+      <div class="matchHistory">
 
-      <p>Puisquam officiis est nostrum. Sint, alias ab a vero! Architecto molestiae, et quo voluptates inventore modi eveniet est ducimus dignissimos praesentium voluptate voluptatum voluptatibus, similique, libero excepturi voluptas, iusto sint?</p>
+        <block class="win none" id="winner">Player X won!</block>
+
+        <h2>Match History</h2>
+        <p>Games played:</p><p id="played"></p>
+        <p>Games won by player 1:</p><p id="one-won"></p>
+        <p>Games won by player 2:</p><p id="two-won"></p>
+        <p>Draws:</p><p id="draws"></p>
+
+
+
+
+      </div>
+
 
     </main>
 
