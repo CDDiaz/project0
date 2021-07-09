@@ -1,12 +1,13 @@
 $(document).ready(function() {
 
-$('#light-css').on('click', function(){
-  $('#styles').attr("href", "css/light.css");
-});
-$('#dark-css').on('click', function(){
-  $('#styles').attr("href", "css/style.css");
-});
-
+// Select the CSS file for dark or light theme
+  $('#light-css').on('click', function(){
+    $('#styles').attr("href", "css/light.css");
+  });
+  $('#dark-css').on('click', function(){
+    $('#styles').attr("href", "css/style.css");
+  });
+// Declaring variables for gametracking
   let gameStatus = 0;
   let gameRecord = 0;
   let playerOneRecord = 0;
@@ -21,6 +22,7 @@ $('#dark-css').on('click', function(){
   let currentSelector = "";
   let currentPlayer = Math.floor((Math.random()*2)+1);
 
+// Checks who the current player is an assigns it to a variable
   const playerCheck = function(){
     if (currentPlayer === 1) {
       currentSelector = playerOne;
@@ -36,13 +38,13 @@ $('#dark-css').on('click', function(){
       $('#twoTurn').addClass('green');
     };
   };
-
+// Main object for the game
   const tictac = {
     a: ["","",""],
     b: ["","",""],
     c: ["","",""]
   };
-
+// Function to reset the game and delete previous data
   const reset = function() {
     tictac.a = ["","",""];
     tictac.b = ["","",""];
@@ -58,7 +60,7 @@ $('#dark-css').on('click', function(){
     $('#c1').text("");
     $('#c2').text("");
   };
-
+// Button to start a quick game
   $('#startQuick').on('click', function() {
     if (gameStatus === 0) {
       gameStatus = 1;
@@ -68,7 +70,7 @@ $('#dark-css').on('click', function(){
       $('#startCustom').addClass('hidden');
     }
   });
-
+// Button to start a custom game
   $('#startCustom').on('click', function() {
     if (gameStatus === 0) {
       gameStatus = 1;
@@ -80,7 +82,7 @@ $('#dark-css').on('click', function(){
       $('#startCustom').addClass('hidden');
     }
   });
-
+// All buttons that are part of the game
   $('#a0').on('click', function() {
     if (tictac.a[0] === "" && gameStatus === 1) {
       $('#a0').text(currentSelector);
@@ -153,7 +155,7 @@ $('#dark-css').on('click', function(){
       playerChange();
     };
   });
-
+// Function to check and validate winners or draws
   const gameCheck = function() {
     const a = tictac.a;
     const b = tictac.b;
@@ -179,7 +181,7 @@ $('#dark-css').on('click', function(){
       draw();
     }
   };
-
+// Function to change player turns
   const playerChange = function() {
     if (currentPlayer === 1) {
       currentPlayer = 2;
@@ -187,9 +189,8 @@ $('#dark-css').on('click', function(){
       currentPlayer = 1;
     }
     playerCheck();
-    console.log("Player's " + currentPlayer + " turn.");
   };
-
+// Function to display and record winners and matches
   const winner = function() {
     gameStatus = 0;
     gameRecord ++;
@@ -205,7 +206,7 @@ $('#dark-css').on('click', function(){
     $('#played').text(gameRecord);
     $('#winner').removeClass('none');
   };
-
+// Function to display and record draws and matches
   const draw = function() {
     gameStatus = 0;
     gameRecord ++;
