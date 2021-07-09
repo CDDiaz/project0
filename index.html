@@ -9,35 +9,27 @@
   <script src="js/jquery.js"></script>
   <script src="js/game.js"></script>
   <script src="js/project0.js"></script>
-
 </head>
 <body>
 
-<div class="container">
+  <div class="container">
     <header>
       <nav>
         <a href="#" class="modes" id="dark-css">Dark Mode</a>
         <a href="#" class="modes" id="light-css">Light Mode</a>
-
-
-
       </nav>
       <h1 class="title">Tic Tac Toe</h1>
-
     </header>
 
     <main>
-
       <div class="welcome">
         <p>Welcome! You have come to the right place for the ultimate Tic Tac Toe challenge. Please select the option of your preference: </p>
-
         <p>Quick games are easy and no extra configuration is needed.</p>
         <button class="startButtons" id="startQuick">Start a Quick Game</button>
         <p>If you prefer to customise your game, then a Custom game would be perfect for you!</p>
         <button class="startButtons" id="startCustom">Start a Custom Game</button>
         <p></p>
       </div>
-
 
       <div class="optionsleft">
         <h3>Player 1</h3>
@@ -47,8 +39,6 @@
         <p class="textToRight">Nickname: <input type="text" id="playerOneNickname" placeholder="enter your nickname"></p>
 
         <p class="textToRight">Identifier: <input type="text" id="playerOneCharacter" placeholder="enter a letter/symbol"></p>
-
-
       </div>
 
       <div class="optionsright">
@@ -59,12 +49,9 @@
         <p class="textToRight">Nickname: <input type="text" id="playerTwoNickname" placeholder="enter your nickname"></p>
 
         <p class="textToRight">Identifier: <input type="text" id="playerTwoCharacter" placeholder="enter a letter/symbol"></p>
-
-
       </div>
 
       <div class="game">
-
         <div class="ticfirst">
           <button class="tictac" id="a0"></button><button class="tictac" id="a1"></button><button class="tictac" id="a2"></button>
         </div>
@@ -76,32 +63,21 @@
         <div class="ticthird">
           <button class="tictac" id="c0"></button><button class="tictac" id="c1"></button><button class="tictac" id="c2"></button>
         </div>
-
       </div>
 
-
       <div class="matchHistory">
-
         <block class="win none" id="winner">Player X won!</block>
-
         <h2>Match History</h2>
         <p>Games played:</p><p id="played"></p>
         <p>Games won by player 1:</p><p id="one-won"></p>
         <p>Games won by player 2:</p><p id="two-won"></p>
         <p>Draws:</p><p id="draws"></p>
-
-
-
-
       </div>
-
-
     </main>
 
     <footer>
       <p>Website designed by Cristhian Diaz Suarez 2021</p>
     </footer>
-
   </div>
 </body>
 </html>
