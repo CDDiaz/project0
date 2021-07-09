@@ -65,6 +65,7 @@ $('#dark-css').on('click', function(){
       playerCheck();
       reset();
       $('#winner').addClass('none');
+      $('#startCustom').addClass('hidden');
     }
   });
 
